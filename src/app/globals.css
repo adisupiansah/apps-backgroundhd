@@ -5,23 +5,84 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #155e95;
+  --pink: #f72c5b;
+  --gray: #D9DFC6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* component home */
+
+.bg-gelap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #155d95a9 10%, #f72c5b4f 60%, #155d9559 90%); /* Overlay hitam transparan */
+  z-index:1;
 }
+.home {
+  position: relative;
+  background-image: url("./bgwal.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home,.row{
+  position: relative;
+  z-index: 2;
+}
+.btn-genre .btn{
+  background-color: var(--gray);
+}
+.btn-genre .btn:hover{
+  background-color: var(--primary);
+  transition: ease-in 0.3s;
+  color: var(--gray);
+}
+.link .link-section{
+  color: var(--gray);
+  border: 2px solid var(--gray);
+}
+.link .link-section:hover{
+  background-color: var(--gray);
+  color: #171717;
+  transition: ease-in 0.2;
+}
+
+/* component walhome */
+.walhome .title h1{
+  color: var(--primary);
+}
+
+/* btn pagination di semua component */
+.btn-pagination{
+  background-color: var(--primary);
+  color: var(--gray);
+}
+
+/* loading */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--primary);
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 70deg,#0000 71deg 90deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation: l5 1s infinite;
+}
+@keyframes l5 {to{transform: rotate(.5turn)}}
