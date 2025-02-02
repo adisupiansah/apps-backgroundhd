@@ -5,8 +5,8 @@ import SearchPage from "@/components/Search/SearchPage";
 const page = () => {
   return (
     <div>
-      <Navbar />
       <Suspense fallback={<div className="loader"></div>}>
+      <Navbar />
         <SearchPage />
       </Suspense>
     </div>

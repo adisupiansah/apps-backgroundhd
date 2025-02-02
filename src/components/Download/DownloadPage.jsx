@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
@@ -53,7 +54,7 @@ const DownloadPage = () => {
               width={500}
               height={500}
             />
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center items-center">
               <button
                 onClick={handleDownloadOriginal}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -66,6 +67,10 @@ const DownloadPage = () => {
               >
                 Download for Your Screen
               </button>
+              <div className="bg-red-500 rounded-lg hover:bg-red-700 transition-colors">
+
+              <Link className='btn text-white' href='/'>back</Link>
+              </div>
             </div>
           </>
         ) : (

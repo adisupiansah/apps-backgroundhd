@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { FaUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import RelatedSearch from "./RelatedSearch";
 
@@ -19,36 +18,36 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-light bg-gray-100 shadow-sm">
-        <div className="container p-1 flex justify-between items-center">
+      <nav className="navbar navbar-light bg-gray-100 shadow-sm fixed-top">
+        <div className="container p-1 flex justify-between items-center flex-col md:flex-row">
           {/* Logo */}
-          <Link href="/" className="font-bold text-decoration-none text-[28px]">
+          <Link href="/" className="font-bold text-decoration-none text-[24px] md:text-[28px]">
             Wallpaper HD
           </Link>
 
           {/* Search Bar */}
-          <form onSubmit={handleSearch} className="flex items-center gap-2">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search wallpapers..."
-              className="border p-2 rounded-full w-64"
-            />
-            <button
-              type="submit"
-              className="p-2 bg-blue-500 text-white rounded-full text-[25px]"
-            >
-              <FiSearch/>
-            </button>
+          <form onSubmit={handleSearch}>
+            <div className="flex justify-center items-center">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search wallpapers..."
+                className="border p-2 rounded-full w-[245px] md:w-[350px]"
+              />
+              <button
+                type="submit"
+                className="p-2 bg-blue-500 text-white rounded-full mx-2 text-[25px]"
+              >
+                <FiSearch />
+              </button>
+            </div>
           </form>
-
-         
         </div>
       </nav>
 
       {/* Komponen Related Search */}
-      <RelatedSearch />
+      {/* <RelatedSearch /> */}
     </div>
   );
 };

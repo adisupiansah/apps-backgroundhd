@@ -86,3 +86,9 @@ body {
   animation: l5 1s infinite;
 }
 @keyframes l5 {to{transform: rotate(.5turn)}}
+
+@media screen and(width: 500px)  {
+  .relatedsearch{
+    display: none;
+  }
+}

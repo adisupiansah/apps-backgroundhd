@@ -7,8 +7,8 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 export const metadata = {
-  title: "Wallpaper",
-  description: "wallpaper hd",
+  title: "Wallpaper Hd",
+  description: "wallpaper hd laptop 4k",
 };
 
 export default function RootLayout({ children }) {

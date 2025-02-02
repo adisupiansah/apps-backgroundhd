@@ -43,7 +43,7 @@ const SearchPage = () => {
   // Tampilkan animasi loading jika data sedang di-fetch
   if (loading) {
     return (
-      <div className="flex justify-center items-center mt-[150px]">
+      <div className="flex justify-center items-center mt-[350px]">
         <div className="loader"></div>
       </div>
     );
@@ -66,10 +66,10 @@ const SearchPage = () => {
   const wallpapersaatini = wallpapers.slice(itempertama, itemterakhir);
 
   return (
-    <div className="searchpage mb-[3rem]">
+    <div className="searchpage mb-[3rem] mt-[8rem] md:mt-[7rem]">
       <div className="container-fluid">
         <div className="row">
-          <h1 className="text-center font-semibold text-[2rem]">
+          <h1 className="text-center font-semibold text-[20px] md:text-[2rem]">
             Hasil pencarian: {query}
           </h1>
           {wallpapersaatini.map((item) => (
